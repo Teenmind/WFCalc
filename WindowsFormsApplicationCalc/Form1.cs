@@ -29,7 +29,7 @@ namespace WindowsFormsApplicationCalc
             char op = Convert.ToChar(txtOp.Text);
             try
             {
-                int res = calc(a, b, op);
+                int res = Calc(a, b, op);
                 txtRes.Text = Convert.ToString(res);
             }
             catch (DivideByZeroException)
@@ -37,20 +37,21 @@ namespace WindowsFormsApplicationCalc
                 txtRes.Text = "∞";
             }
         }
-        public int calc(int a, int b, char op)
+
+        private int Calc(int a, int b, char op)
         {
             int res = 0;
-            if (op == '+')
-                res = a + b;
-            if (op == '-')
-                res = a - b;
-            if (op == '*')
-                res = a * b;
-            if (op == '/')
-                if (b == 0)
-                    throw new DivideByZeroException();
-            else
-                res = a / b;
+                if (op == '+')
+                    res = a + b;
+                if (op == '-')
+                    res = a - b;
+                if (op == '*')
+                    res = a * b;
+                if (op == '/')
+                    if (b == 0)
+                        throw new DivideByZeroException();
+                else
+                    res = a / b;
             return res;
         }
     }
