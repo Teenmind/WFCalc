@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using TestStack.White;
 using TestStack.White.UIItems.WindowItems;
 using TestStack.White.Factory;
@@ -13,10 +14,11 @@ namespace UnitTestFieldsCalc
     [TestClass]
     public class UnitTestFields
     {
+        Application application = Application.Launch($"{Directory.GetCurrentDirectory()}\\WindowsFormsApplicationCalc.exe");
+
         [TestMethod]
         public void TestMethodPlus()
         {
-            Application application = Application.Launch("C:\\my stuff\\ORT courses\\Homeworks\\WindowsFormsApplicationCalc\\WindowsFormsApplicationCalc\\obj\\Release\\WindowsFormsApplicationCalc.exe");
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache); 
 
             window.Get<TextBox>("txtA").Text = "5";
@@ -31,7 +33,6 @@ namespace UnitTestFieldsCalc
         [TestMethod]
         public void TestMethodMinus()
         {
-            Application application = Application.Launch("C:\\my stuff\\ORT courses\\Homeworks\\WindowsFormsApplicationCalc\\WindowsFormsApplicationCalc\\obj\\Release\\WindowsFormsApplicationCalc.exe");
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache);
 
             window.Get<TextBox>("txtA").Text = "5";
@@ -46,7 +47,6 @@ namespace UnitTestFieldsCalc
         [TestMethod]
         public void TestMethodMult()
         {
-            Application application = Application.Launch("C:\\my stuff\\ORT courses\\Homeworks\\WindowsFormsApplicationCalc\\WindowsFormsApplicationCalc\\obj\\Release\\WindowsFormsApplicationCalc.exe");
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache);
 
             window.Get<TextBox>("txtA").Text = "5";
@@ -61,7 +61,6 @@ namespace UnitTestFieldsCalc
         [TestMethod]
         public void TestMethodDiv()
         {
-            Application application = Application.Launch("C:\\my stuff\\ORT courses\\Homeworks\\WindowsFormsApplicationCalc\\WindowsFormsApplicationCalc\\obj\\Release\\WindowsFormsApplicationCalc.exe");
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache);
 
             window.Get<TextBox>("txtA").Text = "5";
