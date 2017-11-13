@@ -25,9 +25,8 @@
     <VCTargetsPath10>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\</VCTargetsPath10>
     <AndroidTargetsPath>F:\tt\MSBuild\Microsoft\MDD\Android\V150\</AndroidTargetsPath>
     <iOSTargetsPath>F:\tt\MSBuild\Microsoft\MDD\iOS\V150\</iOSTargetsPath>
-    <Configuration>Debug</Configuration>
     <Platform>Any CPU</Platform>
-    <AspNetConfiguration>Debug</AspNetConfiguration>
+    <AspNetConfiguration>Release</AspNetConfiguration>
     <SolutionDir>M:\TeamCity\buildAgent\work\91fefeac782661fc\</SolutionDir>
     <SolutionExt>.sln</SolutionExt>
     <SolutionFileName>WindowsFormsApplicationCalc.sln</SolutionFileName>
@@ -36,8 +35,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{8542EBB1-7708-4E4E-A250-E2C47F1333C8}" AbsolutePath="M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{F9F94FF5-1AF2-44F7-9EBC-70DD0833FF11}" AbsolutePath="M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{8542EBB1-7708-4E4E-A250-E2C47F1333C8}" AbsolutePath="M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{F9F94FF5-1AF2-44F7-9EBC-70DD0833FF11}" AbsolutePath="M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
     <NuGetRestoreTargets>F:\tt\MSBuild\..\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.targets</NuGetRestoreTargets>
@@ -82,16 +81,16 @@
       <ToolsVersion>
       </ToolsVersion>
       <SkipNonexistentProjects>False</SkipNonexistentProjects>
-      <AdditionalProperties>Configuration=Debug; Platform=AnyCPU</AdditionalProperties>
-      <Configuration>Debug</Configuration>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
       <Platform>AnyCPU</Platform>
     </ProjectReference>
     <ProjectReference Include="M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj">
       <ToolsVersion>
       </ToolsVersion>
       <SkipNonexistentProjects>False</SkipNonexistentProjects>
-      <AdditionalProperties>Configuration=Debug; Platform=AnyCPU</AdditionalProperties>
-      <Configuration>Debug</Configuration>
+      <AdditionalProperties>Configuration=Release; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Release</Configuration>
       <Platform>AnyCPU</Platform>
     </ProjectReference>
   </ItemGroup>
@@ -220,35 +219,35 @@
     <MSBuild Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
   </Target>
   <Target Name="WindowsFormsApplicationCalc" Outputs="@(WindowsFormsApplicationCalcBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
       <Output TaskParameter="TargetOutputs" ItemName="WindowsFormsApplicationCalcBuildOutput" />
     </MSBuild>
   </Target>
   <Target Name="WindowsFormsApplicationCalc:Clean">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
   <Target Name="WindowsFormsApplicationCalc:Rebuild" Outputs="@(WindowsFormsApplicationCalcBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
       <Output TaskParameter="TargetOutputs" ItemName="WindowsFormsApplicationCalcBuildOutput" />
     </MSBuild>
   </Target>
   <Target Name="WindowsFormsApplicationCalc:Publish">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\WindowsFormsApplicationCalc\WindowsFormsApplicationCalc.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
   <Target Name="UnitTestFieldsCalc" Outputs="@(UnitTestFieldsCalcBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
       <Output TaskParameter="TargetOutputs" ItemName="UnitTestFieldsCalcBuildOutput" />
     </MSBuild>
   </Target>
   <Target Name="UnitTestFieldsCalc:Clean">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
   <Target Name="UnitTestFieldsCalc:Rebuild" Outputs="@(UnitTestFieldsCalcBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
       <Output TaskParameter="TargetOutputs" ItemName="UnitTestFieldsCalcBuildOutput" />
     </MSBuild>
   </Target>
   <Target Name="UnitTestFieldsCalc:Publish">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'M:\TeamCity\buildAgent\work\91fefeac782661fc\UnitTestFieldsCalc\UnitTestFieldsCalc.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Release; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
 </Project>
