@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using TestStack.White;
 using TestStack.White.UIItems.WindowItems;
@@ -14,11 +15,17 @@ namespace UnitTestFieldsCalc
     [TestClass]
     public class UnitTestFields
     {
-        Application application = Application.Launch($"{Directory.GetCurrentDirectory()}\\WindowsFormsApplicationCalc.exe");
+        private Application GetApplication()
+        {
+            var configCalcPath = ConfigurationManager.AppSettings["calcPath"];
+            var calcPath = string.IsNullOrEmpty(configCalcPath) ? Directory.GetCurrentDirectory() : configCalcPath;
+            return Application.Launch($"{calcPath}\\WindowsFormsApplicationCalc.exe");
+        }
 
         [TestMethod]
         public void TestMethodPlus()
         {
+            var application = GetApplication();
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache); 
 
             window.Get<TextBox>("txtA").Text = "5";
@@ -33,6 +40,7 @@ namespace UnitTestFieldsCalc
         [TestMethod]
         public void TestMethodMinus()
         {
+            var application = GetApplication();
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache);
 
             window.Get<TextBox>("txtA").Text = "5";
@@ -47,6 +55,7 @@ namespace UnitTestFieldsCalc
         [TestMethod]
         public void TestMethodMult()
         {
+            var application = GetApplication();
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache);
 
             window.Get<TextBox>("txtA").Text = "5";
@@ -61,6 +70,7 @@ namespace UnitTestFieldsCalc
         [TestMethod]
         public void TestMethodDiv()
         {
+            var application = GetApplication();
             Window window = application.GetWindow("Calculator", InitializeOption.NoCache);
 
             window.Get<TextBox>("txtA").Text = "5";
